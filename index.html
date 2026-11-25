@@ -91,13 +91,13 @@ b, strong{ font-weight:600; }
 @media (hover:hover){ .btn:hover{ background:var(--table); } .btn.fill:hover{ background:#333333; } }
 
 /* 히어로 */
-.hero{ padding:34px 0 0; }
-.hero .txt{ display:grid; gap:16px; justify-items:start; }
-.hero .brand{ width:min(240px, 64vw); }
+.hero{ padding:22px 0 0; }
+.hero .txt{ display:grid; gap:12px; justify-items:start; }
+.hero .brand{ width:min(180px, 48vw); }
 .hero .ko{ margin:0; font-size:1.02rem; font-weight:600; }
 .hero .lead{ margin:0; color:var(--soft); }
-.hero .btns{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; width:100%; margin-top:6px; }
-.hero .btns .fill{ grid-column:1 / -1; }
+.hero .btns{ display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr); gap:6px; width:100%; margin-top:6px; }
+.hero .btns .btn{ padding:0 8px; white-space:nowrap; }
 .hero .note{ margin:0; font-family:var(--mono); font-size:.8rem; letter-spacing:.06em; color:var(--soft); }
 @media (min-width:900px){
   .hero{ padding:72px 0 0; }
@@ -121,7 +121,7 @@ b, strong{ font-weight:600; }
 .frame figcaption::before{ content:""; display:inline-block; width:0; height:0; margin-right:6px; border-left:6px solid var(--edge); border-top:4px solid transparent; border-bottom:4px solid transparent; }
 
 /* 히어로 띠: 왼쪽으로 흐름(setInterval · 강제 재생) */
-.hero .strip{ margin-top:34px; overflow:hidden; }
+.hero .strip{ margin-top:24px; overflow:hidden; }
 .hero .frames{ width:max-content; will-change:transform; }
 .hero .frame{ width:clamp(132px, 38vw, 220px); }
 @media (min-width:900px){ .hero .strip{ margin-top:64px; } }
@@ -159,7 +159,7 @@ b, strong{ font-weight:600; }
 @media (min-width:1100px){ .roll .frame{ width:calc((min(100vw - 40px, 1120px) - 58px) / 4); } }
 .roll .frame.pick::after{ content:""; position:absolute; left:-5px; right:-5px; top:-5px; bottom:20px; border:2px solid var(--red); border-radius:var(--r); transform:rotate(-1.2deg); pointer-events:none; }
 .roll .hint{ margin:8px 0 0; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; color:var(--soft); }
-@media (min-width:1100px){ .roll .hint{ display:none; } #roll-9 .frame{ width:168px; } }
+@media (min-width:1100px){ .roll .hint{ display:none; } #roll-9 .frame{ width:168px; } .roll .strip{ width:fit-content; max-width:100%; } }
 .more{ margin:28px 0 0; color:var(--soft); }
 .more a{ color:var(--ink); text-underline-offset:3px; }
 
@@ -233,7 +233,7 @@ b, strong{ font-weight:600; }
         <a class="btn" href="tel:050714316365">전화</a>
         <a class="btn" href="#price">가격 보기</a>
       </div>
-      <p class="note">100% 예약제 · FRI–MON 11:00–19:00</p>
+      <p class="note">100% 예약제 · 금–월 11:00–19:00</p>
     </div>
     <div class="strip" aria-hidden="true">
       <div class="frames" id="hero-frames">
@@ -464,7 +464,7 @@ b, strong{ font-weight:600; }
           <dt>address</dt>
           <dd><p>대구 중구 봉산문화길 10 <span class="nw">지하1층</span></p></dd>
           <dt>walk</dt>
-          <dd><p>반월당 9번 출구에서 우회전 하시고 쭉 걸어오시면 좌측편 은성빌딩 건물 지하 <span class="nw">1층입니다 :)</span></p></dd>
+          <dd><p>반월당 9번 출구에서 우회전 하시고 쭉 걸어오시면 좌측편 은성빌딩 건물 <span class="nw">지하 1층입니다 :)</span></p></dd>
           <dt>tel</dt>
           <dd><p><a href="tel:050714316365">0507-1431-6365</a></p></dd>
           <dt>map</dt>
@@ -479,7 +479,7 @@ b, strong{ font-weight:600; }
 <footer class="foot">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="처음으로"><img src="sd-logo.svg" alt="Ditto Photo Studio" width="120" height="40" loading="lazy" /></a>
-    <p>스튜디오 디토 · 대구 중구 봉산문화길 10 지하1층<br /><span class="nw">FRI–MON 11:00–19:00</span></p>
+    <p>스튜디오 디토 · 대구 중구 봉산문화길 10 지하1층<br /><span class="nw">금–월 11:00–19:00</span></p>
     <nav aria-label="외부 링크">
       <a href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오톡</a>
       <a href="https://www.instagram.com/studio_ditto_/" target="_blank" rel="noopener">인스타그램</a>
