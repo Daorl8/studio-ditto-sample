@@ -143,7 +143,7 @@ b, strong{ font-weight:600; }
 @media (hover:hover){ .index a:hover .nm{ text-decoration:underline; text-underline-offset:4px; } }
 .index-note{ margin:16px 0 0; padding:0; list-style:none; font-size:.9rem; color:var(--soft); }
 .index-note li{ padding:2px 0; }
-@media (min-width:900px){ .index{ columns:2; column-gap:56px; } .index li{ break-inside:avoid; } }
+@media (min-width:900px){ .index{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:repeat(4, auto); grid-auto-flow:column; column-gap:56px; } }
 
 .roll{ margin-top:64px; scroll-margin-top:120px; }
 .roll-h{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 16px; align-items:end; margin-bottom:14px; }
@@ -156,10 +156,10 @@ b, strong{ font-weight:600; }
 .roll .strip::-webkit-scrollbar{ display:none; }
 .roll .frames{ width:max-content; }
 .roll .frame{ width:min(62vw, 250px); scroll-snap-align:start; }
-@media (min-width:1100px){ .roll .frame{ width:calc((min(100vw - 40px, 1120px) - 58px) / 4); } }
+@media (min-width:1100px){ .roll .frame{ width:calc((min(100vw - 40px, 1120px) - 74px) / 4); }  /* 74 = 띠 안쪽 여백 28 + 간격 30 + 스크롤바 여유 16 */ }
 .roll .frame.pick::after{ content:""; position:absolute; left:-5px; right:-5px; top:-5px; bottom:20px; border:2px solid var(--red); border-radius:var(--r); transform:rotate(-1.2deg); pointer-events:none; }
 .roll .hint{ margin:8px 0 0; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; color:var(--soft); }
-@media (min-width:1100px){ .roll .hint{ display:none; } #roll-9 .frame{ width:168px; } .roll .strip{ width:fit-content; max-width:100%; } }
+@media (min-width:1100px){ .roll .hint{ display:none; } #roll-9 .frame{ width:calc((min(100vw - 40px, 1120px) - 114px) / 6); } .roll .strip{ width:fit-content; max-width:100%; } }
 .more{ margin:28px 0 0; color:var(--soft); }
 .more a{ color:var(--ink); text-underline-offset:3px; }
 
@@ -513,16 +513,21 @@ b, strong{ font-weight:600; }
     });
   },120);
 
-  /* 히어로 필름 띠: 복제해 이어 붙이고 setInterval로 왼쪽으로 흘림(강제 재생) · 화면 밖이면 멈춤 */
+  /* 히어로 필름 띠: 복제해 이어 붙이고 setInterval로 왼쪽으로 흘림(강제 재생) · 화면 밖이면 멈춤
+     한 바퀴 = 첫 복제 컷 위치 − 첫 컷 위치(R-53 · padding · gap 섞인 scrollWidth/2 금지) · 띠 폭 + 한 바퀴를 채울 때까지 복제 */
   var hf=document.getElementById('hero-frames');
   if(hf){
-    [].slice.call(hf.children).forEach(function(f){ var c=f.cloneNode(true); var im=c.querySelector('img'); if(im){ im.setAttribute('loading','lazy'); } hf.appendChild(c); });
+    var orig=[].slice.call(hf.children), n=orig.length;
+    function addSet(){ orig.forEach(function(f){ var c=f.cloneNode(true); var im=c.querySelector('img'); if(im){ im.setAttribute('loading','lazy'); } hf.appendChild(c); }); }
+    function period(){ var k=hf.children; return k.length>n ? k[n].offsetLeft-k[0].offsetLeft : 0; }
+    function fill(){ var g=0; while(hf.scrollWidth < hf.parentNode.clientWidth + period() + 40 && g++<8){ addSet(); } }
+    addSet(); fill(); window.addEventListener('resize', fill);
     var x=0, last=Date.now();
     setInterval(function(){
       var now=Date.now(), dt=Math.min(now-last,100); last=now;
       var r=hf.getBoundingClientRect(); if(r.bottom<0 || r.top>window.innerHeight) return;
-      var half=hf.scrollWidth/2; if(!half) return;
-      x-=dt*0.03; if(-x>=half){ x+=half; }
+      var p=period(); if(!p) return;
+      x-=dt*0.03; while(-x>=p){ x+=p; }
       hf.style.transform='translate3d('+x.toFixed(2)+'px,0,0)';
     },16);
   }
