@@ -1,0 +1,5 @@
+name = "studio-ditto-sample"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "./"

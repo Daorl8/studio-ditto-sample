@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>스튜디오 디토 Studio Ditto | 대구 반월당 사진관 · 증명 · 프로필 · 컨셉화보</title>
+<meta name="description" content="누구나 꿈꾸는 멋진 나만의 모습, 특별한 하루를 정성껏 기록해드립니다! 대구 중구 봉산문화길 10 지하1층 · 100% 예약제 · 카카오톡 예약." />
+<link rel="canonical" href="https://studio-ditto-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="스튜디오 디토" />
+<meta property="og:title" content="스튜디오 디토 Studio Ditto · 대구 반월당 사진관" />
+<meta property="og:description" content="증명 · 세미 프로필 · 클린 블랙 · 흑백 · 컨셉화보 · 그룹 · 100% 예약제" />
+<meta property="og:url" content="https://studio-ditto-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://studio-ditto-sample.lgt3232.workers.dev/og-sd.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#FFFFFF" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<!-- 시안 도메인 = studio-ditto-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical · og:url · og:image · JSON-LD url/image 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "스튜디오 디토",
+  "alternateName": "Studio Ditto",
+  "url": "https://studio-ditto-sample.lgt3232.workers.dev/",
+  "image": "https://studio-ditto-sample.lgt3232.workers.dev/og-sd.jpg",
+  "telephone": "+82-507-1431-6365",
+  "address": { "@type": "PostalAddress", "streetAddress": "봉산문화길 10 지하1층", "addressLocality": "중구", "addressRegion": "대구광역시", "addressCountry": "KR" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday","Sunday","Monday"], "opens": "11:00", "closes": "19:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/studio_ditto_/", "https://m.place.naver.com/place/1879187652/home", "https://pf.kakao.com/_mxaxaxhn"]
+}
+</script>
+<style>
+@font-face{ font-family:"SD Serif"; src:url("sd-dmserif-v01.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face{ font-family:"SD Mono"; src:url("sd-dmmono-v01.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face{ font-family:"SD Sans"; src:url("sd-pretendard-v01.woff2") format("woff2"); font-weight:400 600; font-display:swap; }
+:root{
+  --paper:#FFFFFF;     /* 인화지 */
+  --table:#F2F2F2;     /* 라이트 테이블 면 */
+  --film:#141414;      /* 필름 바탕 */
+  --ink:#141414;       /* 18.1:1 */
+  --soft:#5E5E5E;      /* 6.4:1 (paper) · 5.8:1 (table) */
+  --edge:#A3A3A3;      /* 필름 가장자리 글자 · 7.3:1 (film) */
+  --line:#D9D9D9;
+  --red:#C8102E;       /* 그리스 펜슬 표시 · 5.9:1 (paper) */
+  --r:2px;
+  --serif:"SD Serif","SD Sans",Georgia,serif;
+  --mono:"SD Mono","SD Sans",ui-monospace,Menlo,Consolas,monospace;
+  --sans:"SD Sans",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:auto; scroll-padding-top:114px; -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.75; word-break:keep-all; overflow-wrap:break-word; -webkit-font-smoothing:antialiased; padding-bottom:66px; }
+img{ display:block; max-width:100%; height:auto; }
+a{ color:inherit; }
+b, strong{ font-weight:600; }
+:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+[tabindex="-1"]:focus{ outline:none; }
+.nw{ white-space:nowrap; }
+.sr{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.wrap{ width:min(100% - 40px, 1120px); margin:0 auto; }
+.mono{ font-family:var(--mono); letter-spacing:.04em; }
+
+/* 헤더 */
+.top{ position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line); }
+.top .bar{ display:flex; align-items:center; justify-content:space-between; height:62px; }
+.logo{ display:block; text-decoration:none; }
+.logo img{ width:104px; height:auto; }
+.nav{ display:none; gap:34px; }
+.nav a, .snav a{ font-family:var(--mono); font-size:.86rem; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; color:var(--soft); }
+.top .head-cta{ display:none; }
+.snav{ display:flex; border-top:1px solid var(--line); }
+.snav a{ flex:1 1 0; display:flex; align-items:center; justify-content:center; min-height:42px; white-space:nowrap; font-size:.78rem; letter-spacing:.08em; }
+@media (min-width:900px){
+  .nav{ display:flex; } .snav{ display:none; } html{ scroll-padding-top:80px; }
+  .top .bar{ height:70px; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); }
+  .top .head-cta{ display:inline-flex; justify-self:end; }
+}
+@media (hover:hover){ .nav a:hover, .snav a:hover{ color:var(--ink); } }
+
+/* 버튼 */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.4em; min-height:50px; padding:0 22px; border:1px solid var(--ink); border-radius:var(--r); font-size:.94rem; font-weight:600; text-decoration:none; color:var(--ink); background:transparent; transition:background-color .25s ease, color .25s ease; }
+.btn.fill{ background:var(--ink); color:#FFFFFF; }
+.head-cta.btn{ min-height:40px; font-size:.86rem; padding:0 16px; }
+@media (hover:hover){ .btn:hover{ background:var(--table); } .btn.fill:hover{ background:#333333; } }
+
+/* 히어로 */
+.hero{ padding:34px 0 0; }
+.hero .txt{ display:grid; gap:16px; justify-items:start; }
+.hero .brand{ width:min(240px, 64vw); }
+.hero .ko{ margin:0; font-size:1.02rem; font-weight:600; }
+.hero .lead{ margin:0; color:var(--soft); }
+.hero .btns{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; width:100%; margin-top:6px; }
+.hero .btns .fill{ grid-column:1 / -1; }
+.hero .note{ margin:0; font-family:var(--mono); font-size:.8rem; letter-spacing:.06em; color:var(--soft); }
+@media (min-width:900px){
+  .hero{ padding:72px 0 0; }
+  .hero .txt{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:end; column-gap:64px; }
+  .hero .brand{ width:360px; grid-row:1 / span 3; }
+  .hero .btns{ max-width:440px; }
+}
+</style>
+<style>
+@media (min-width:900px){ .hero .txt > :not(.brand){ grid-column:2; } }
+
+/* 필름 띠 (히어로 · 롤 공통) */
+.strip{ position:relative; background:var(--film); color:var(--edge); padding:26px 0; }
+.strip::before, .strip::after{ content:""; position:absolute; left:0; right:0; height:9px; background:repeating-linear-gradient(90deg, transparent 0 10px, #3A3A3A 10px 20px); }
+.strip::before{ top:8px; } .strip::after{ bottom:8px; }
+.edge{ display:flex; justify-content:space-between; gap:16px; padding:0 14px 8px; font-family:var(--mono); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap; overflow:hidden; }
+.frames{ display:flex; gap:10px; padding:0 14px; }
+.frame{ position:relative; flex:0 0 auto; margin:0; }
+.frame img{ width:100%; aspect-ratio:4/5; object-fit:cover; background:#262626; }
+.frame figcaption{ margin-top:6px; font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; color:var(--edge); }
+.frame figcaption::before{ content:""; display:inline-block; width:0; height:0; margin-right:6px; border-left:6px solid var(--edge); border-top:4px solid transparent; border-bottom:4px solid transparent; }
+
+/* 히어로 띠: 왼쪽으로 흐름(setInterval · 강제 재생) */
+.hero .strip{ margin-top:34px; overflow:hidden; }
+.hero .frames{ width:max-content; will-change:transform; }
+.hero .frame{ width:clamp(132px, 38vw, 220px); }
+@media (min-width:900px){ .hero .strip{ margin-top:64px; } }
+
+/* 롤 */
+.sec{ padding:72px 0; }
+.sec.table{ background:var(--table); }
+.sec-h{ margin:0 0 8px; font-family:var(--serif); font-weight:400; font-size:clamp(2rem, 7vw, 3.2rem); line-height:1.1; letter-spacing:.01em; }
+.sec-sub{ margin:0; color:var(--soft); }
+.kicker{ display:block; margin-bottom:10px; font-family:var(--mono); font-size:.78rem; letter-spacing:.14em; color:var(--red); }
+
+.index{ list-style:none; margin:36px 0 0; padding:0; border-top:1px solid var(--ink); }
+.index li{ border-bottom:1px solid var(--line); }
+.index a{ display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:4px 14px; align-items:baseline; padding:14px 2px; text-decoration:none; }
+.index .no{ font-family:var(--mono); font-size:.8rem; color:var(--soft); }
+.index .nm{ font-weight:600; }
+.index .nm small{ display:block; font-weight:400; font-size:.84rem; color:var(--soft); }
+.index .pr{ white-space:nowrap; font-variant-numeric:tabular-nums; }
+@media (hover:hover){ .index a:hover .nm{ text-decoration:underline; text-underline-offset:4px; } }
+.index-note{ margin:16px 0 0; padding:0; list-style:none; font-size:.9rem; color:var(--soft); }
+.index-note li{ padding:2px 0; }
+@media (min-width:900px){ .index{ columns:2; column-gap:56px; } .index li{ break-inside:avoid; } }
+
+.roll{ margin-top:64px; scroll-margin-top:120px; }
+.roll-h{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 16px; align-items:end; margin-bottom:14px; }
+.roll-h .rn{ grid-column:1 / -1; font-family:var(--mono); font-size:.78rem; letter-spacing:.14em; color:var(--soft); }
+.roll-h h3{ margin:0; font-family:var(--serif); font-weight:400; font-size:clamp(1.6rem, 5.4vw, 2.2rem); line-height:1.15; }
+.roll-h h3 small{ display:block; margin-top:4px; font-family:var(--sans); font-size:.95rem; font-weight:600; }
+.roll-h h3 small span{ font-weight:400; color:var(--soft); white-space:nowrap; }
+.roll-h .pr{ font-size:1.05rem; font-weight:600; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.roll .strip{ overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:14px; scrollbar-width:none; }
+.roll .strip::-webkit-scrollbar{ display:none; }
+.roll .frames{ width:max-content; }
+.roll .frame{ width:min(62vw, 250px); scroll-snap-align:start; }
+@media (min-width:1100px){ .roll .frame{ width:calc((min(100vw - 40px, 1120px) - 58px) / 4); } }
+.roll .frame.pick::after{ content:""; position:absolute; left:-5px; right:-5px; top:-5px; bottom:20px; border:2px solid var(--red); border-radius:var(--r); transform:rotate(-1.2deg); pointer-events:none; }
+.roll .hint{ margin:8px 0 0; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; color:var(--soft); }
+@media (min-width:1100px){ .roll .hint{ display:none; } #roll-9 .frame{ width:168px; } }
+.more{ margin:28px 0 0; color:var(--soft); }
+.more a{ color:var(--ink); text-underline-offset:3px; }
+
+/* 예약 · 시간 */
+.reserve{ display:grid; gap:40px; margin-top:36px; }
+.reserve ul{ list-style:none; margin:0; padding:0; border-top:1px solid var(--ink); }
+.reserve li{ padding:14px 0; border-bottom:1px solid var(--line); }
+.reserve .btns{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8px; margin-top:20px; }
+.reserve .btns .fill{ grid-column:1 / -1; }
+.week{ display:grid; grid-template-columns:repeat(7, minmax(0,1fr)); border:1px solid var(--ink); border-radius:var(--r); }
+.week div{ display:grid; gap:6px; justify-items:center; padding:14px 2px; text-align:center; border-left:1px solid var(--line); }
+.week div:first-child{ border-left:0; }
+.week b{ font-family:var(--mono); font-weight:400; font-size:.86rem; }
+.week span{ font-family:var(--mono); font-size:.7rem; line-height:1.4; color:var(--soft); }
+.week .off{ background:var(--table); }
+.week .off span{ color:var(--red); }
+.week-note{ margin:12px 0 0; font-size:.92rem; }
+.week-note b{ font-family:var(--mono); font-weight:400; }
+@media (min-width:900px){ .reserve{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:64px; } }
+
+/* 오시는 길 */
+.visit{ display:grid; gap:32px; margin-top:36px; }
+.visit dl{ margin:0; }
+.visit dt{ font-family:var(--mono); font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); padding-top:16px; }
+.visit dd{ margin:2px 0 0; padding-bottom:16px; border-bottom:1px solid var(--line); }
+.visit dd p{ margin:0; }
+.visit dd a{ text-underline-offset:3px; }
+.map{ width:100%; height:300px; border:0; border-radius:var(--r); background:var(--table); }
+@media (min-width:768px){ .visit{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px; } .map{ height:100%; min-height:440px; } }
+
+/* 푸터 · 하단 바 */
+.foot{ padding:56px 0 44px; text-align:center; background:var(--film); color:#E6E6E6; }
+.foot .logo img{ width:120px; margin:0 auto; filter:invert(1); }
+.foot p{ margin:14px 0 0; font-size:.88rem; color:var(--edge); }
+.foot nav{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px 20px; margin-top:16px; }
+.foot nav a{ font-size:.9rem; text-underline-offset:3px; }
+.foot small{ display:block; margin-top:24px; font-family:var(--mono); font-size:.72rem; letter-spacing:.08em; color:var(--edge); }
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:var(--paper); border-top:1px solid var(--line); }
+.quick a{ display:flex; align-items:center; justify-content:center; min-height:48px; border:1px solid var(--ink); border-radius:var(--r); font-size:.88rem; font-weight:600; text-decoration:none; color:var(--ink); }
+.quick a.fill{ background:var(--ink); color:#FFFFFF; }
+@media (min-width:900px){ .quick{ display:none; } body{ padding-bottom:0; } }
+
+/* 나타나기 (강제 재생 · setInterval) */
+.js .reveal{ opacity:0; translate:0 14px; transition:opacity .9s ease var(--d,0s), translate .9s ease var(--d,0s); }
+.js .reveal.in{ opacity:1; translate:0 0; }
+</style>
+<noscript><style>.js .reveal{ opacity:1; translate:0 0; }</style></noscript>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="스튜디오 디토 처음으로"><img src="sd-logo.svg" alt="Ditto Photo Studio" width="104" height="35" /></a>
+    <nav class="nav" aria-label="섹션">
+      <a href="#price">price</a><a href="#rolls">rolls</a><a href="#reserve">reserve</a><a href="#visit">visit</a>
+    </nav>
+    <a class="btn fill head-cta" href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오톡 예약</a>
+  </div>
+  <nav class="snav" aria-label="섹션 바로가기">
+    <a href="#price">price</a><a href="#rolls">rolls</a><a href="#reserve">reserve</a><a href="#visit">visit</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap txt">
+      <h1 id="hero-h" class="brand"><img src="sd-logo.svg" alt="Ditto Photo Studio 스튜디오 디토" width="360" height="121" /></h1>
+      <p class="ko">누구나 꿈꾸는 멋진 나만의 모습, 특별한 하루를 <span class="nw">정성껏 기록해드립니다!</span></p>
+      <p class="lead">촬영의 경험이 즐겁고 행복한 기억으로 남길 바라며, <span class="nw">부담없이 방문해주세요 :)</span></p>
+      <div class="btns">
+        <a class="btn fill" href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오톡 예약</a>
+        <a class="btn" href="tel:050714316365">전화</a>
+        <a class="btn" href="#price">가격 보기</a>
+      </div>
+      <p class="note">100% 예약제 · FRI–MON 11:00–19:00</p>
+    </div>
+    <div class="strip" aria-hidden="true">
+      <div class="frames" id="hero-frames">
+        <figure class="frame"><img src="sd-semi-1.webp" alt="" width="720" height="900" /><figcaption>01A</figcaption></figure>
+        <figure class="frame"><img src="sd-black-2.webp" alt="" width="720" height="900" /><figcaption>02A</figcaption></figure>
+        <figure class="frame"><img src="sd-velvet-2.webp" alt="" width="460" height="575" /><figcaption>03A</figcaption></figure>
+        <figure class="frame"><img src="sd-mono-1.webp" alt="" width="720" height="900" loading="lazy" /><figcaption>04A</figcaption></figure>
+        <figure class="frame"><img src="sd-duo-1.webp" alt="" width="720" height="900" loading="lazy" /><figcaption>05A</figcaption></figure>
+        <figure class="frame"><img src="sd-x-1.webp" alt="" width="720" height="900" loading="lazy" /><figcaption>06A</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="price" aria-labelledby="price-h">
+    <div class="wrap">
+      <span class="kicker reveal">PRICE LIST</span>
+      <h2 id="price-h" class="sec-h reveal">Price</h2>
+      <ol class="index">
+        <li class="reveal"><a href="#roll-1"><span class="no">001</span><span class="nm">증명/여권 촬영<small>보정1, 흰배경</small></span><span class="pr">45,000원</span></a></li>
+        <li class="reveal"><a href="#roll-2"><span class="no">002</span><span class="nm">세미 프로필 / 상반신<small>보정1</small></span><span class="pr">70,000원</span></a></li>
+        <li class="reveal"><a href="#roll-3"><span class="no">003</span><span class="nm">프로필 / 클린 블랙<small>보정3</small></span><span class="pr">150,000원</span></a></li>
+        <li class="reveal"><a href="#roll-4"><span class="no">004</span><span class="nm">프로필 / 흑백<small>보정3</small></span><span class="pr">120,000원</span></a></li>
+        <li class="reveal"><a href="#roll-5"><span class="no">005</span><span class="nm">컨셉화보 / 문라이트벨벳<small>보정4</small></span><span class="pr">200,000원</span></a></li>
+        <li class="reveal"><a href="#roll-6"><span class="no">006</span><span class="nm">컨셉화보 / 디토 빈티지<small>보정4</small></span><span class="pr">200,000원</span></a></li>
+        <li class="reveal"><a href="#roll-7"><span class="no">007</span><span class="nm">그룹 2인<small>커플/우정/가족 · 보정2</small></span><span class="pr">100,000원</span></a></li>
+        <li class="reveal"><a href="#roll-8"><span class="no">008</span><span class="nm">그룹 3인 이상<small>가족/우정 · 보정2</small></span><span class="pr">150,000원</span></a></li>
+      </ol>
+      <ul class="index-note reveal">
+        <li>원본/인화/포스터/액자 — 변동</li>
+        <li>상품내용이 궁금한경우 <span class="nw">카톡문의</span></li>
+        <li>이벤트는 인스타/소식에 <span class="nw">있어요!</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec table" id="rolls" aria-labelledby="rolls-h">
+    <div class="wrap">
+      <span class="kicker reveal">CONTACT SHEETS</span>
+      <h2 id="rolls-h" class="sec-h reveal">Rolls</h2>
+      <article class="roll" id="roll-1" aria-labelledby="roll-1-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 001</span>
+          <h3 id="roll-1-h"><span lang="en">ID / Passport</span><small>증명/여권 촬영 <span>보정1, 흰배경</span></small></h3>
+          <span class="pr">45,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 001</span><span>4 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-id-1.webp" alt="폴라로이드 틀에 담은 흰 배경 증명사진" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-id-2.webp" alt="흰 배경 증명사진 두 장" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          <figure class="frame"><img src="sd-id-3.webp" alt="여러 장 나열한 남성 증명사진" width="720" height="900" loading="lazy" /><figcaption>03A</figcaption></figure>
+          <figure class="frame"><img src="sd-id-4.webp" alt="흰 배경 증명사진 두 장" width="720" height="900" loading="lazy" /><figcaption>04A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-2" aria-labelledby="roll-2-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 002</span>
+          <h3 id="roll-2-h"><span lang="en">Semi Profile</span><small>세미 프로필 / 상반신 <span>보정1</span></small></h3>
+          <span class="pr">70,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 002</span><span>4 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-semi-1.webp" alt="하늘색 리본을 단 밝은 배경 상반신 프로필" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-semi-2.webp" alt="흰 옷 밝은 배경 상반신 프로필" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          <figure class="frame"><img src="sd-semi-3.webp" alt="긴 웨이브 머리 상반신 프로필" width="720" height="900" loading="lazy" /><figcaption>03A</figcaption></figure>
+          <figure class="frame"><img src="sd-semi-4.webp" alt="니트 차림 웃는 상반신 프로필" width="720" height="900" loading="lazy" /><figcaption>04A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-3" aria-labelledby="roll-3-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 003</span>
+          <h3 id="roll-3-h"><span lang="en">Clean Black</span><small>프로필 / 클린 블랙 <span>보정3</span></small></h3>
+          <span class="pr">150,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 003</span><span>4 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-black-1.webp" alt="검은 결 배경 앞 정면 프로필" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-black-2.webp" alt="검은 결 배경 앞 가까운 정면 프로필" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          <figure class="frame"><img src="sd-black-3.webp" alt="검은 결 배경 앞 옆모습 프로필" width="720" height="900" loading="lazy" /><figcaption>03A</figcaption></figure>
+          <figure class="frame"><img src="sd-black-4.webp" alt="검은 결 배경 앞 남성 옆모습 프로필" width="720" height="900" loading="lazy" /><figcaption>04A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-4" aria-labelledby="roll-4-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 004</span>
+          <h3 id="roll-4-h"><span lang="en">Black &amp; White</span><small>프로필 / 흑백 <span>보정3</span></small></h3>
+          <span class="pr">120,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 004</span><span>2 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-mono-1.webp" alt="정장 차림 전신 흑백 프로필" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-mono-2.webp" alt="안경 쓴 남성 흑백 프로필" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-5" aria-labelledby="roll-5-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 005</span>
+          <h3 id="roll-5-h"><span lang="en">Moonlight Velvet</span><small>컨셉화보 / 문라이트벨벳 <span>보정4</span></small></h3>
+          <span class="pr">200,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 005</span><span>4 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-velvet-1.webp" alt="검은 풍선과 벨벳 드레스 컨셉 화보" width="460" height="575" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-velvet-2.webp" alt="팔짱 낀 벨벳 드레스 컨셉 화보" width="460" height="575" loading="lazy" /><figcaption>02A</figcaption></figure>
+          <figure class="frame"><img src="sd-velvet-3.webp" alt="고개를 기울인 벨벳 드레스 컨셉 화보" width="460" height="575" loading="lazy" /><figcaption>03A</figcaption></figure>
+          <figure class="frame"><img src="sd-velvet-4.webp" alt="눈을 내리뜬 벨벳 드레스 컨셉 화보" width="460" height="575" loading="lazy" /><figcaption>04A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-6" aria-labelledby="roll-6-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 006</span>
+          <h3 id="roll-6-h"><span lang="en">Ditto Vintage</span><small>컨셉화보 / 디토 빈티지 <span>보정4</span></small></h3>
+          <span class="pr">200,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 006</span><span>1 FRAME</span></div>
+          <div class="frames">
+          <figure class="frame"><img src="sd-vintage-1.webp" alt="빨간 야구 점퍼 차림 잡지 표지형 빈티지 화보" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          </div>
+        </div>
+      </article>
+      <article class="roll" id="roll-7" aria-labelledby="roll-7-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 007</span>
+          <h3 id="roll-7-h"><span lang="en">Duo</span><small>그룹 2인 <span>커플/우정/가족 · 보정2</span></small></h3>
+          <span class="pr">100,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 007</span><span>2 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-duo-1.webp" alt="장난스럽게 볼을 잡은 두 사람" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-duo-2.webp" alt="정장과 흰 원피스 차림 두 사람" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-8" aria-labelledby="roll-8-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 008</span>
+          <h3 id="roll-8-h"><span lang="en">Group</span><small>그룹 3인 이상 <span>가족/우정 · 보정2</span></small></h3>
+          <span class="pr">150,000원</span>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 008</span><span>2 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame pick"><img src="sd-group-1.webp" alt="서로 안고 있는 세 친구" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-group-2.webp" alt="크리스마스 폴라로이드 가족 사진" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          </div>
+        </div>
+      <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <article class="roll" id="roll-9" aria-labelledby="roll-9-h">
+        <div class="roll-h reveal">
+          <span class="rn">ROLL 009</span>
+          <h3 id="roll-9-h"><span lang="en">More Frames</span></h3>
+        </div>
+        <div class="strip reveal">
+          <div class="edge" aria-hidden="true"><span>DITTO 009</span><span>6 FRAMES</span></div>
+          <div class="frames">
+          <figure class="frame"><img src="sd-x-1.webp" alt="파란 셔츠를 입은 갈색 푸들" width="720" height="900" loading="lazy" /><figcaption>01A</figcaption></figure>
+          <figure class="frame"><img src="sd-x-2.webp" alt="파란 배경 앞 도베르만" width="720" height="900" loading="lazy" /><figcaption>02A</figcaption></figure>
+          <figure class="frame"><img src="sd-x-3.webp" alt="멜빵 차림 아이 사진" width="720" height="900" loading="lazy" /><figcaption>03A</figcaption></figure>
+          <figure class="frame"><img src="sd-x-4.webp" alt="감과 함께 찍은 DITTO SPOTLIGHT 4컷 프레임" width="720" height="900" loading="lazy" /><figcaption>04A</figcaption></figure>
+          <figure class="frame"><img src="sd-x-5.webp" alt="흰 배경 앞 하얀 강아지" width="720" height="900" loading="lazy" /><figcaption>05A</figcaption></figure>
+          <figure class="frame"><img src="sd-x-6.webp" alt="꽃잎이 흩날리는 남성 프로필" width="720" height="900" loading="lazy" /><figcaption>06A</figcaption></figure>
+          </div>
+        </div>
+        <p class="hint" aria-hidden="true">SWIPE →</p>
+      </article>
+      <p class="more reveal">더 많은 사진은 <a href="https://www.instagram.com/studio_ditto_/" target="_blank" rel="noopener">인스타그램 <span class="nw">@studio_ditto_</span></a>에서 <span class="nw">볼 수 있어요.</span></p>
+    </div>
+  </section>
+
+  <section class="sec" id="reserve" aria-labelledby="reserve-h">
+    <div class="wrap">
+      <span class="kicker reveal">RESERVATION</span>
+      <h2 id="reserve-h" class="sec-h reveal">Reserve</h2>
+      <p class="sec-sub reveal">100% 예약제입니다! 꼭 예약 후 <span class="nw">방문해주세요 :)</span></p>
+      <div class="reserve">
+        <div class="reveal">
+          <ul>
+            <li>문의 · 예약 Kakaotalk : <span class="nw">스튜디오 디토</span></li>
+            <li>예약 양식에 맞춰 <span class="nw">카카오톡 부탁드려요</span></li>
+          </ul>
+          <div class="btns">
+            <a class="btn fill" href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오톡 예약</a>
+            <a class="btn" href="tel:050714316365">전화</a>
+            <a class="btn" href="https://www.instagram.com/studio_ditto_/" target="_blank" rel="noopener">인스타그램</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="week" role="table" aria-label="요일별 영업시간">
+            <div role="row"><b role="rowheader">월</b><span role="cell">11:00<br />19:00</span></div>
+            <div role="row" class="off"><b role="rowheader">화</b><span role="cell">휴무</span></div>
+            <div role="row" class="off"><b role="rowheader">수</b><span role="cell">휴무</span></div>
+            <div role="row" class="off"><b role="rowheader">목</b><span role="cell">휴무</span></div>
+            <div role="row"><b role="rowheader">금</b><span role="cell">11:00<br />19:00</span></div>
+            <div role="row"><b role="rowheader">토</b><span role="cell">11:00<br />19:00</span></div>
+            <div role="row"><b role="rowheader">일</b><span role="cell">11:00<br />19:00</span></div>
+          </div>
+          <p class="week-note">금 · 토 · 일 · 월 <b>11:00 - 19:00</b><br />화 · 수 · 목 정기휴무</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec table" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <span class="kicker reveal">LOCATION</span>
+      <h2 id="visit-h" class="sec-h reveal">Visit</h2>
+      <p class="sec-sub reveal">반월당역 9번 출구에서 532m</p>
+      <div class="visit">
+        <dl class="reveal">
+          <dt>address</dt>
+          <dd><p>대구 중구 봉산문화길 10 <span class="nw">지하1층</span></p></dd>
+          <dt>walk</dt>
+          <dd><p>반월당 9번 출구에서 우회전 하시고 쭉 걸어오시면 좌측편 은성빌딩 건물 지하 <span class="nw">1층입니다 :)</span></p></dd>
+          <dt>tel</dt>
+          <dd><p><a href="tel:050714316365">0507-1431-6365</a></p></dd>
+          <dt>map</dt>
+          <dd><p><a href="https://map.naver.com/p/entry/place/1879187652" target="_blank" rel="noopener">네이버 지도에서 보기</a></p></dd>
+        </dl>
+        <iframe class="map reveal" title="스튜디오 디토 위치 지도" src="https://maps.google.com/maps?q=%EB%8C%80%EA%B5%AC%20%EC%A4%91%EA%B5%AC%20%EB%B4%89%EC%82%B0%EB%AC%B8%ED%99%94%EA%B8%B8%2010&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="처음으로"><img src="sd-logo.svg" alt="Ditto Photo Studio" width="120" height="40" loading="lazy" /></a>
+    <p>스튜디오 디토 · 대구 중구 봉산문화길 10 지하1층<br /><span class="nw">FRI–MON 11:00–19:00</span></p>
+    <nav aria-label="외부 링크">
+      <a href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오톡</a>
+      <a href="https://www.instagram.com/studio_ditto_/" target="_blank" rel="noopener">인스타그램</a>
+      <a href="https://m.place.naver.com/place/1879187652/home" target="_blank" rel="noopener">네이버 플레이스</a>
+    </nav>
+    <small>© Studio Ditto · 샘플 사이트</small>
+  </div>
+</footer>
+
+<nav class="quick" aria-label="빠른 연결">
+  <a class="fill" href="https://pf.kakao.com/_mxaxaxhn/chat" target="_blank" rel="noopener">카카오 예약</a>
+  <a href="tel:050714316365">전화</a>
+  <a href="https://www.instagram.com/studio_ditto_/" target="_blank" rel="noopener">인스타</a>
+</nav>
+
+<script>
+(function(){
+  var pending=[].slice.call(document.querySelectorAll('.reveal'));
+  pending.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+    if(sib.length>1){ el.style.setProperty('--d',(Math.min(sib.indexOf(el),5)*0.06)+'s'); }
+  });
+  function showAll(){ pending.forEach(function(el){ el.classList.add('in'); }); pending=[]; }
+  var t=setInterval(function(){
+    if(!pending.length){ clearInterval(t); return; }
+    if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){ showAll(); return; }
+    var line=window.innerHeight*0.9;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; }
+      return true;
+    });
+  },120);
+
+  /* 히어로 필름 띠: 복제해 이어 붙이고 setInterval로 왼쪽으로 흘림(강제 재생) · 화면 밖이면 멈춤 */
+  var hf=document.getElementById('hero-frames');
+  if(hf){
+    [].slice.call(hf.children).forEach(function(f){ var c=f.cloneNode(true); var im=c.querySelector('img'); if(im){ im.setAttribute('loading','lazy'); } hf.appendChild(c); });
+    var x=0, last=Date.now();
+    setInterval(function(){
+      var now=Date.now(), dt=Math.min(now-last,100); last=now;
+      var r=hf.getBoundingClientRect(); if(r.bottom<0 || r.top>window.innerHeight) return;
+      var half=hf.scrollWidth/2; if(!half) return;
+      x-=dt*0.03; if(-x>=half){ x+=half; }
+      hf.style.transform='translate3d('+x.toFixed(2)+'px,0,0)';
+    },16);
+  }
+
+  /* 부드러운 스크롤(R-25): rAF 직접 이동 · 폴백 · 휠/터치면 중단 · 끝나면 대상 포커스 */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest ? e.target.closest('a[href^="#"]') : null; if(!a) return;
+    var id=a.getAttribute('href'); if(id.length<2) return;
+    var tg=document.querySelector(id); if(!tg) return;
+    e.preventDefault();
+    var head=document.querySelector('.top'); var off=(head ? head.getBoundingClientRect().height : 0)+10;
+    var y0=window.pageYOffset; var y1=(id==='#top') ? 0 : Math.max(0, tg.getBoundingClientRect().top+y0-off);
+    var dur=700, s0=null, done=false;
+    function ease(p){ return p<.5 ? 4*p*p*p : 1-Math.pow(-2*p+2,3)/2; }
+    function stop(){ done=true; window.removeEventListener('wheel',stop); window.removeEventListener('touchstart',stop); }
+    function finish(){ stop(); if(!tg.hasAttribute('tabindex')){ tg.setAttribute('tabindex','-1'); } tg.focus({preventScroll:true}); }
+    window.addEventListener('wheel',stop,{passive:true}); window.addEventListener('touchstart',stop,{passive:true});
+    function step(ts){ if(done) return; if(s0===null) s0=ts; var p=Math.min((ts-s0)/dur,1); window.scrollTo(0, y0+(y1-y0)*ease(p)); if(p<1){ requestAnimationFrame(step); } else { finish(); } }
+    requestAnimationFrame(step);
+    setTimeout(function(){ if(!done){ window.scrollTo(0,y1); finish(); } }, dur+300);
+    if(history.pushState){ history.pushState(null,'',id); }
+  });
+})();
+</script>
+</body>
+</html>
